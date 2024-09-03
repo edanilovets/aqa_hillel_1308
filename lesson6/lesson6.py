@@ -1,4 +1,4 @@
-import time
+# import time
 
 ######################################################################
 # Loops, if/else
@@ -8,7 +8,7 @@ import time
 age = 25
 if 0 < age < 18:  # age > 0 and age < 18
     print("You are a minor")
-elif age >= 18 and age < 65:
+elif 18 <= age < 65:
     print("You are an adult")
 elif age >= 65:
     print("You are old")
@@ -134,10 +134,13 @@ for i in input_fields:
     # todo: implement later
     pass
 
-# some method
-def some_function():
-    pass
 
+# some method
+def some_function(my_name, my_age):
+    print(my_name, my_age)
+
+
+some_function("Eugene", 35)
 
 print("-" * 100)
 ######################################################################
@@ -258,7 +261,7 @@ api_response = [
         "age": 35,
         "email": "myemail@gmail.com",
         "address": {
-            "street": "Kreschatik",
+            "street": "Jones st.",
             "postal_code": 13132
         }
     },
