@@ -1,0 +1,12 @@
+2024-09-17 20:42:00 DEBUG Starting new HTTP connection (1): 127.0.0.1:7070
+2024-09-17 20:42:00 DEBUG http://127.0.0.1:7070 "POST /content HTTP/11" 200 49
+2024-09-17 20:42:00 DEBUG Starting new HTTP connection (1): 127.0.0.1:7070
+2024-09-17 20:42:00 DEBUG http://127.0.0.1:7070 "GET /content HTTP/11" 200 318
+2024-09-17 20:42:00 DEBUG Starting new HTTP connection (1): 127.0.0.1:7070
+2024-09-17 20:42:00 DEBUG http://127.0.0.1:7070 "PUT /content/0 HTTP/11" 200 49
+2024-09-17 20:42:00 DEBUG Starting new HTTP connection (1): 127.0.0.1:7070
+2024-09-17 20:42:00 DEBUG http://127.0.0.1:7070 "DELETE /content/0 HTTP/11" 200 49
+2024-09-17 20:42:00 INFO Creating car record with {'cars': ['Audi, VW', 'Toyota']}
+2024-09-17 20:42:00 DEBUG Starting new HTTP connection (1): 127.0.0.1:7070
+2024-09-17 20:42:00 DEBUG http://127.0.0.1:7070 "POST /content HTTP/11" 200 49
+2024-09-17 20:42:00 INFO Creating response {'message': 'Content created successfully!'}
