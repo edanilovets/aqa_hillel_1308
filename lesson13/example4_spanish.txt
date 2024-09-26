@@ -1,0 +1,3 @@
+Hola, Mundo!
+Bienvenidos al mundo de la codificación en ISO-8859-1.
+¡Adiós!

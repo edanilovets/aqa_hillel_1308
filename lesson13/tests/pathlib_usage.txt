@@ -1,0 +1,5 @@
+1. Test data management (reading and writing)
+2. Cross-platform
+3. Temporary folders and files
+4. Parametrized tests with data from txt files
+5. Verify file if file exists or file content
