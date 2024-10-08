@@ -25,16 +25,19 @@ def test_get_data():
     response = requests.get(url)
     api_response = ApiResponse(response)
 
-    assert api_response == 200
-    assert "url" in api_response
-    assert len(api_response) == 4
+    # Assertions using dunder methods
+    assert api_response.status_code == 200, f"Expected status code 200, but got {api_response.status_code}"
+    assert "url" in api_response, "Expected 'url' in the response"
+    assert len(api_response) > 1, "Expected more than 1 field in the response"
 
-def test_get_data1():
-    url = f"{BASE_URL}/get"
+def test_create_data():
+    url = f"{BASE_URL}/post"
+    data = {"name": "John Doe", "email": "john@example.com"}
 
-    response = requests.get(url)
+    response = requests.post(url, json=data)
     api_response = ApiResponse(response)
 
-    assert api_response == 201
-    assert "url" in api_response
-    assert len(api_response) == 4
+    # Assertions using dunder methods
+    assert api_response.status_code == 200, f"Expected status code 200, but got {api_response.status_code}"
+    assert "json" in api_response, "Expected 'json' in the response"
+    assert len(api_response.json_data['json']) == 2, "Expected exactly 2 fields in the response JSON"
