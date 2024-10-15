@@ -1,6 +1,6 @@
 class Auto:
 
-    def __init__(self, tank: int | float, fuel_consumption: int | float):
+    def __init__(self, tank, fuel_consumption):
         self.tank = self.__check_value_more_than_0(tank, 'tank')
         self.fuel_consumption = self.__check_value_more_than_0(fuel_consumption, 'fuel_consumption')
         self.engine_is_on = False
@@ -8,7 +8,7 @@ class Auto:
 
     @staticmethod
     def __check_value_more_than_0(value: int, name):
-        if not isinstance(value, (int, float)):
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
             raise TypeError(f'Value of {name} shout be int or float')
 
         if value <= 0:

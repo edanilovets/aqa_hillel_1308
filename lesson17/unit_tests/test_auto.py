@@ -1,7 +1,7 @@
-from pytest import mark, fixture
+import pytest
+from pytest import mark
 
 from lesson17.src.class_auto import Auto
-
 
 #########################################
 # Test class initialization (positive)
@@ -51,3 +51,24 @@ def test_stop_engine(default_auto):
 
 #########################################
 # Test class initialization (negative)
+def test_invalid_tank():
+    with pytest.raises(ValueError):
+        Auto(tank=-50, fuel_consumption=5)
+
+    with pytest.raises(ValueError):
+        Auto(tank=0, fuel_consumption=5)
+
+def test_invalid_fuel_consumption():
+    with pytest.raises(ValueError):
+        Auto(tank=50, fuel_consumption=-5)
+
+    with pytest.raises(ValueError):
+        Auto(tank=50, fuel_consumption=0)
+
+def test_invalid_type_of_tank():
+    with pytest.raises(TypeError):
+        Auto(tank="50", fuel_consumption=5)
+
+def test_invalid_type_of_fuel_consumption():
+    with pytest.raises(TypeError):
+        Auto(tank=True, fuel_consumption=5)
