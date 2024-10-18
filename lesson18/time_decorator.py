@@ -1,9 +1,6 @@
 import time
 import logging
 
-from lesson11.src.utils.logger_util import logger
-
-
 def timer_decorator(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
