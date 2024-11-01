@@ -72,10 +72,10 @@ VALUES
 insert_into_table_students = """
 INSERT INTO students (name, age, faculty_id)
 VALUES
-('Alice', 20, 1),
-('Bob', 21, 1),
-('Eugene', 25, 2),
-('Anna', 25, 3);
+('Alice', 17, 1),
+('Bob', 17, 1),
+('Eugene', 18, 2),
+('Anna', 16, 3);
 """
 
 insert_into_table_students_no_faculty = """

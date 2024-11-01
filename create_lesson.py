@@ -11,7 +11,7 @@ def create_lesson(lesson_number):
     return lesson_dir, lesson_file
 
 if __name__ == "__main__":
-    create_lesson(21)
+    create_lesson(22)
     # lesson_file.unlink()
     # print("Deleted file", lesson_file)
     # lesson_dir.rmdir()
