@@ -1,5 +1,3 @@
-import logging
-
 import requests
 
 
@@ -7,7 +5,7 @@ class BaseClient:
 
     def __init__(self, config: dict):
         self.config = config
-        self.logger = logging.getLogger(__name__)
+        self.logger = config.get("logger")
 
     def _make_request(self, method, endpoint, **kwargs):
         url = f"{self.config['base_url']}{endpoint}"
@@ -33,6 +31,7 @@ class BaseClient:
             response.raise_for_status()
             return response
         except requests.HTTPError as e:
+            self.logger.error(f"HTTP error occurred {e}")
             raise RuntimeError(f"HTTP error occurred {e}")
         except requests.RequestException as e:
             raise RuntimeError(f"RequestException error occurred {e}")

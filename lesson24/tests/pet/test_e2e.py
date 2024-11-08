@@ -5,21 +5,6 @@ from lesson24.data.add_pet import pet_data_list
 from lesson24.src.app import App
 
 
-@pytest.fixture(autouse=True)
-def setup(app_auth: App):
-    for pet_data in pet_data_list:
-        try:
-            app_auth.pet.delete_pet(pet_data["id"])
-        except RuntimeError:
-            pass
-    yield
-    for pet_data in pet_data_list:
-        try:
-            app_auth.pet.delete_pet(pet_data["id"])
-        except RuntimeError:
-            pass
-
-
 @pytest.mark.parametrize("pet_data", pet_data_list, ids=[f"pet-{pet['id']}" for pet in pet_data_list])
 def test_create_and_get_pet(app_auth: App, pet_data):
     # Step 1: Get pet without id
