@@ -5,56 +5,26 @@ faker = Faker()
 pet_data_list = [
     {
         "id": 101,
-        "category": {
-            "id": 1,
-            "name": "cats"
-        },
-        "name": faker.name(),
-        "photoUrls": [
-            "https://cat1.example"
-        ],
-        "tags": [
-            {
-                "id": 1,
-                "name": "kitty"
-            }
-        ],
+        "name": "Fluffy",
+        "category": {"id": 1, "name": "Cats"},
+        "photoUrls": ["https://example.com/cat1.jpg"],
+        "tags": [{"id": 1, "name": "cute"}],
         "status": "available"
     },
     {
-      "id": 102,
-      "category": {
-        "id": 2,
-        "name": "dogs"
-      },
-      "name": faker.name(),
-      "photoUrls": [
-        "string"
-      ],
-      "tags": [
-        {
-          "id": 2,
-          "name": "dogs"
-        }
-      ],
-      "status": "pending"
+        "id": 102,
+        "name": "Barky",
+        "category": {"id": 2, "name": "Dogs"},
+        "photoUrls": ["https://example.com/dog1.jpg"],
+        "tags": [{"id": 2, "name": "friendly"}],
+        "status": "available"
     },
     {
-      "id": 103,
-      "category": {
-        "id": 2,
-        "name": "dogs"
-      },
-      "name": faker.name(),
-      "photoUrls": [
-        "string"
-      ],
-      "tags": [
-        {
-          "id": 1,
-          "name": "silent"
-        }
-      ],
-      "status": "available"
-    }
+        "id": 103,
+        "name": "Goldy",
+        "category": {"id": 3, "name": "Fish"},
+        "photoUrls": ["https://example.com/fish1.jpg"],
+        "tags": [{"id": 3, "name": "silent"}],
+        "status": "sold"
+    },
 ]

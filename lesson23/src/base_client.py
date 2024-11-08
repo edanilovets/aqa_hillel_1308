@@ -1,21 +1,23 @@
-import requests
-import logging
 import configparser
+import logging
+from pathlib import Path
+
+import requests
+
 
 class BaseClient:
-
     BASE_URL = None
 
     def __init__(self, api_key: str = None, env="qa"):
         self.api_key = api_key
         self.logger = logging
         config = configparser.ConfigParser()
-        config.read("/Users/danilovets/Personal/Hillel/aqa_hillel_1308/lesson23/settings.ini")
+        config_path = Path(__file__).resolve().parent.parent / "settings.ini"
+        config.read(config_path)
         if env in config:
             self.BASE_URL = config[env]["BASE_URL"]
         else:
             raise ValueError(f"Environment is not supported {env}")
-
 
     def _make_request(self, method, endpoint, **kwargs):
         url = f"{self.BASE_URL}{endpoint}"
