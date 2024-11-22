@@ -5,18 +5,25 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from lesson28.src.models.car_model import Car
 from lesson28.src.pages.base_page import BasePage
-from lesson28.src.custom_expected_conditions import CarToBeAddedToGarage
+from lesson28.src.custom_expected_conditions import CarToBeAddedToGarage, CarsNumberToBe
+from assertpy import assert_that
+
+from lesson28.src.pages.page_elements.left_menu import LeftMenu
+
 
 class GaragePage(BasePage):
+    def __init__(self, driver, qa_auto_config):
+        super().__init__(driver, qa_auto_config)
+        self.left_menu = LeftMenu(driver, qa_auto_config)
+
     # Modal window for car adding
+    # add_car_btn = AddCarBtn()
     ADD_CAR_BTN = (By.CSS_SELECTOR, "app-garage .btn.btn-primary")
     CAR_BRAND_SELECTOR = (By.ID, "addCarBrand")
     CAR_MODEL_SELECTOR = (By.ID, "addCarModel")
     CAR_MILEAGE_INPUT = (By.ID, "addCarMileage")
     CAR_MILEAGE_SELECTOR = (By.ID, "addCarMileage1")
     ADD_BTN = (By.CSS_SELECTOR, ".modal-footer .btn.btn-primary")
-    # Modal window for fuel expenses
-    # TODO
 
     def open(self):
         url = "/panel/garage"
@@ -35,5 +42,15 @@ class GaragePage(BasePage):
         self.actions.click(self.ADD_BTN)
         WebDriverWait(self.driver, wait_time).until(CarToBeAddedToGarage())
 
-    def add_fuel_expense(self):
-        pass
+    def wait_for_number_of_cars_to_be(self, num: int = 1, wait_time: int = 5):
+        WebDriverWait(self.driver, wait_time).until(CarsNumberToBe(num))
+
+    def get_car_from_garage_by_index(self, index: int = 1) -> Car:
+        car_item_el = self.actions.find((By.CSS_SELECTOR, f".car-list li:nth-child({index})"))
+        model, brand = car_item_el.find_element(By.CSS_SELECTOR, ".car_name").text.split()
+        mileage = car_item_el.find_element(By.CSS_SELECTOR, ".update-mileage-form_input").get_attribute("valueAsNumber")
+        return Car(model, brand, float(mileage))
+
+    def assert_that_car_was_added(self, car: Car, index: int = 1):
+        actual_car = self.get_car_from_garage_by_index(index)
+        assert_that(actual_car).is_equal_to(car)

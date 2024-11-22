@@ -5,4 +5,4 @@ class Car:
     """Car object for garage page"""
     brand: str = "Audi"
     model: str = "TT"
-    mileage: int = 1000
+    mileage: float = 1000
