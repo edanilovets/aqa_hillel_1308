@@ -18,6 +18,10 @@ class GaragePage(BasePage):
     # Modal window for fuel expenses
     # TODO
 
+    def open(self):
+        url = "/panel/garage"
+        self.driver.get(f"{self.base_url}{url}")
+
     def add_car(self, car: Car, wait_time: int = 5):
         """Adding car to the garage"""
         self.actions.click(self.ADD_CAR_BTN)

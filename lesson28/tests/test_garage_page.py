@@ -4,12 +4,13 @@ from lesson28.tests.base_test import BaseTest
 
 
 class TestGaragePage(BaseTest):
-    def test_add_car(self, driver):
-        # Set pages
-        garage_page = GaragePage(driver)
+    """Test Garage page"""
+
+    def test_add_car(self, driver, auto_config):
         # Login as guest
-        self.login_as_guest(driver)
+        self.login_as_guest(driver, auto_config)
         # Add car
+        garage_page = GaragePage(driver, auto_config)
         car1 = Car(brand="Porsche", model="Cayenne", mileage=1000)
         car2 = Car(brand="Audi", model="Q7", mileage=19999)
         garage_page.add_car(car1)
