@@ -1,0 +1,96 @@
+Вступ
+- Які інструменти ви використовували для автоматизації тестування?
+- Selenium/WebDriver. Які основні методи ви використовуєте?
+click()
+send_keys()
+find_element()
+find_elements()
+execute_script()
+switch_to()
+exceptions: NoSuchElementException, TimeoutException, StaleElementReferenceException, ClickInterceptedException
+
+XPATH
+CSS
+
+- Що слід автоматизувати, а що ні?
+- Опишіть архітектуру/методологія фреймворка для UI або API тестів
+- Zephyr Scale, TestRail, Jira
+- Де можна зберігати expected results для тестів?
+-- В коді
+-- В окремому файлі: json, yaml, xml
+-- В базі даних
+-- В environment variables
+- Загальна схема в CI/CD для автотестів
+-- Jenkins, GitLab CI, GitHub Actions, Azure DevOps
+- Якій останній баг ви знайшли?
+- Як ви вдосконалюєте свої навички?
+- ПЕТ-проект
+
+ООП
+PEP8
+- Що таке PEP8?
+Що таке ООП? Як ви використовуєте принципи ООП в автоматизації?
+magic methods
+- Інкапсуляція
+- Наслідування
+- Поліморфізм
+- Абстракція
+@classmethod vs @staticmethod, для чого використовувати
+
+Робота з exceptions:
+try/except/else/finally
+- StaleElementReferenceException
+- NoSuchElementException
+el = driver.find_element_by_css_selector('css')
+# dom was changed
+el.click()
+
+Pytest
+Що таке фікстури?
+Який scope буває у фікстур?
+Що таке mark? Як їх можна використовувати?
+built-in marks: skip, xfail, parametrize, usefixtures, filterwarnings
+- mark.skip
+- mark.smoke
+- mark.parametrize
+Розкажіть про parametrize
+Pytest hooks:
+pytest_configure, pytest_sessionstart, pytest_sessionfinish, pytest_unconfigure,
+pytest_collection_modifyitems, pytest_collection_finish, pytest_runtestloop,
+pytest_runtest_protocol, pytest_runtest_makereport, pytest_runtest_call,
+pytest_runtest_setup, pytest_runtest_teardown, pytest_exception_interact,
+pytest_terminal_summary, pytest_terminal_summary
+
+HTTP
+Які основні методи HTTP запитів ви знаєте?
+Різниця між GET/POST/PUT/DELETE
+Які є ще методи?
+- HEAD, OPTIONS, PATCH, TRACE, CONNECT, DELETE, POST, PUT, GET, UPDATE
+Які є основні заголовки HTTP запитів?
+- Content-Type, Accept, Authorization, User-Agent, Cookie, Cache-Control, Connection, Host, Referer, Origin, X-Requested-With, X-CSRF-Token, X-Frame-Options, X-XSS-Protection, X-Content-Type-Options, Content-Security-Policy, Strict-Transport-Security, Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Allow-Credentials, Access-Control-Max-Age, Access-Control-Expose-Headers, Access-Control-Request-Method, Access-Control-Request-Headers
+Чи можна в POST послати query parameters. Чи можна в GET послати body?
+Які основні статус коди знаєте. В чому різниця?
+ - 1xx, 2xx, 3xx, 4xx, 5xx
+
+Що таке менеджер контексту? __enter__, __exit__
+Чи є досвід роботи з БД?
+Різниця між SQL та NoSQL!
+SQL запити. JOIN, GROUP BY | SELECT .. FROM .. JOIN .. WHERE .. GROUP BY .. ORDER BY .. HAVING .. LIMIT (TOP)
+
+Що таке Docker?
+Де використовується? Для чого? docker exec -it image_name sh
+Що таке Git?
+Яка різниця між Pull, Push, Fetch? Pull vs Fetch
+Для чого робити гілки?
+
+Чи працювали з Allure?
+Які є плюси і мінуси?
+
+Практичне завдання:
+https://leetcode.com/playground/afrft3Fc
+https://leetcode.com/playground/Tr7VFRpX
+https://leetcode.com/playground/ckfHbHUc
+https://leetcode.com/playground/cH49iMxU
+https://leetcode.com/playground/54BkW42e
+https://leetcode.com/playground/gpF8Vup3
+https://leetcode.com/playground/54BkW42e
