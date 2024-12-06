@@ -1,3 +1,12 @@
+Практичне завдання:
+https://leetcode.com/playground/afrft3Fc
+https://leetcode.com/playground/Tr7VFRpX
+https://leetcode.com/playground/ckfHbHUc
+https://leetcode.com/playground/cH49iMxU
+https://leetcode.com/playground/54BkW42e
+https://leetcode.com/playground/gpF8Vup3
+https://leetcode.com/playground/54BkW42e
+
 Вступ
 - Які інструменти ви використовували для автоматизації тестування?
 - Selenium/WebDriver. Які основні методи ви використовуєте?
@@ -85,12 +94,3 @@ SQL запити. JOIN, GROUP BY | SELECT .. FROM .. JOIN .. WHERE .. GROUP BY .
 
 Чи працювали з Allure?
 Які є плюси і мінуси?
-
-Практичне завдання:
-https://leetcode.com/playground/afrft3Fc
-https://leetcode.com/playground/Tr7VFRpX
-https://leetcode.com/playground/ckfHbHUc
-https://leetcode.com/playground/cH49iMxU
-https://leetcode.com/playground/54BkW42e
-https://leetcode.com/playground/gpF8Vup3
-https://leetcode.com/playground/54BkW42e
